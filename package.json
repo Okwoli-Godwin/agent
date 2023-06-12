@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/app.ts",
-    "dev": "nodemon src/index.ts",
-    "build": "tsc /src/**/*.ts"
+    "start": "node ./dist/index.js",
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

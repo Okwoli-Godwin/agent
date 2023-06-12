@@ -1,7 +1,7 @@
 import express, { Application, Response, Request } from "express";
 import mongodb from "mongodb"
 
-import create from "../src/router/router"
+import router from "./router/mainRouter";
 import mongoose , {ConnectOptions} from "mongoose"
 import Cors from "cors"
 import dotenv from 'dotenv';
@@ -26,7 +26,7 @@ const connectDB = async (): Promise<void> => {
 const app: Application = express();
 app.use(express.json())
 app.use(Cors())
-app.use("/api/agents",create )
+app.use("/api/agents",router )
 app.get("/", (req: Request, res: Response) => {
     return res.status(200).json({
       message: "API READY FOR DIRTY ONLINE PROJECT",
